@@ -1,4 +1,3 @@
-<p align="center"><img src="https://www.vrisini.de/files/vrisinide_assets/images/vrisini-seo-logo.jpg" width="300"></p>
 <h1 align="center">Contao-SAP products sync and order push.</h1>
 <h2>Sync SAP products and categories collection in Contao for faster access</h2>
 <h2>Library class to inject leads data from Contao to SAP, includes resources in collection.</h2>
