@@ -1,5 +1,5 @@
 <p align="center"><img src="https://taheri.cool/logo_tc.png" width="300"></p>
-<h1 align="center">Contao-SAP products sync and order push.</h1>
+<h1 align="center">Contao-SAP products sync and leads push.</h1>
 <h2>Sync SAP products and categories collection in Contao for faster access</h2>
 <h2>Library class to inject leads data from Contao to SAP, includes resources in collection.</h2>
 ### Supports
