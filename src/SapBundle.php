@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @copyright Taheri Create 2023 - 2026
  */
 
-namespace Vrisini\ViInovanBundle;
+namespace Tahericreate\SapBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ViInovanBundle extends Bundle
+class SapBundle extends Bundle
 {
 }
