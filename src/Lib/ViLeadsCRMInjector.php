@@ -20,10 +20,10 @@ class ViLeadsCRMInjector
     
     public function __construct(){
 		// Initialise SAP parameters
-		$this->leadCollectionUrl = $GLOBALS['TL_CONFIG']['client_id'];
-		$this->productCollectionUrl = $GLOBALS['TL_CONFIG']['client_id'];
-		$this->username = $GLOBALS['TL_CONFIG']['client_id'];
-		$this->password = $GLOBALS['TL_CONFIG']['client_id'];
+		$this->leadCollectionUrl = $GLOBALS['TL_CONFIG']['lead_collection_url'];
+		$this->productCollectionUrl = $GLOBALS['TL_CONFIG']['product_collection_url'];
+		$this->username = $GLOBALS['TL_CONFIG']['sap_username'];
+		$this->password = $GLOBALS['TL_CONFIG']['sap_password'];
 	}
     
     public function getCSRFToken($mode = 'leads') {
