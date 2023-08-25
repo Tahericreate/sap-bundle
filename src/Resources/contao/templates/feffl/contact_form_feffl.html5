@@ -1,0 +1,43 @@
+<?php $this->extend('form_row'); ?>
+<?php global $objPage; ?>
+<?php $this->block('label'); ?>
+  <?php if ($this->label): ?>
+    <?php if ($this->mandatory): ?>
+    <label for="ctrl_<?= $this->id ?>" class="col-sm-4 control-label mandatory"><?= $this->label ?></label>
+    <?php else: ?>       
+      <label for="ctrl_<?= $this->id ?>" class="col-sm-4 control-label"><?= $this->label ?> <span class="optional">(optional)</span></label>
+    <?php endif; ?>    
+  <?php endif; ?>
+<?php $this->endblock(); ?>
+
+<?php $this->block('field'); ?>
+  <?php if ($this->hasErrors()): ?>
+    <p class="error"><?= $this->getErrorAsString() ?></p>
+  <?php endif; ?>
+
+  <?php if ($this->multiple): ?>
+    <input type="hidden" name="<?= rtrim($this->name, '[]') ?>" value="">
+  <?php endif; ?>
+  <div class="col-sm-5">
+    <select name="<?= $this->name ?>" id="ctrl_<?= $this->id ?>" class="<?= $this->class ?> form-control"<?= $this->getAttributes() ?>>
+      <?php if($objPage->language == 'en'): ?>
+        <option value="">Please choose</option>
+      <?php else: ?>
+        <option value="">Bitte wählen Sie</option>
+      <?php endif; ?>
+      <?php foreach ($this->getOptions() as $option): ?>
+        <?php if ('group_start' == $option['type']): ?>
+          <optgroup label="<?= $option['label'] ?>">
+        <?php endif; ?>
+  
+        <?php if ('option' == $option['type']): ?>
+          <option value="<?= $option['value'] ?>"<?= $option['selected'] ?>><?= $option['label'] ?></option>
+        <?php endif; ?>
+  
+        <?php if ('group_end' == $option['type']): ?>
+          </optgroup>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    </select>
+  </div>
+<?php $this->endblock(); ?>

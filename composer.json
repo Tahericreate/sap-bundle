@@ -1,0 +1,17 @@
+{
+    "name": "tahericreate/sap-bundle",
+    "description": "Custom bundle for SAP",
+    "type": "contao-bundle",
+    "license": "LGPL-3.0-or-later",
+    "require": {
+        "contao/core-bundle": "^4.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tahericreate\\SapBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Tahericreate\\SapBundle\\ContaoManager\\Plugin"
+    }
+}

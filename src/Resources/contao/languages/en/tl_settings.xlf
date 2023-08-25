@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_settings.php" source-language="en">
+    <body>
+      <trans-unit id="tl_settings.sap_legend">
+        <source>SAP Module Settings</source>
+      </trans-unit>
+      
+      <trans-unit id="tl_settings.lead_collection_url.0">
+        <source>Lead Collection URL</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.lead_collection_url.1">
+        <source>Used to inject leads from Contao forms to SAP.</source>
+      </trans-unit>
+
+      <trans-unit id="tl_settings.product_collection_url.0">
+        <source>Product Collection URL</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.product_collection_url.1">
+        <source>Used to sync products from SAP to Contao.</source>
+      </trans-unit>
+
+     <trans-unit id="tl_settings.sap_password.0">
+        <source>Password</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.sap_password.1">
+        <source>Please specify SAP password.</source>
+      </trans-unit>
+
+      <trans-unit id="tl_settings.sap_username.0">
+        <source>Username</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.sap_username.1">
+        <source>Please specify SAP username.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

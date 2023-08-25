@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Sync</title>
+    <style>
+		#blanker{
+			width: 280px;
+			height: 250px;
+			margin: 0 auto;
+			padding: 0;
+			background:url(../files/css/inovan-sync-animation.gif) no-repeat;
+		}
+		#main .content{
+			background: #f4f4f4;
+			border: none;
+		}
+		#main .content .container{
+			padding: 20px;
+		}
+		#main .content .container #completed{
+			display: none;
+			border-top: 1px solid #333;
+			font-weight: bold;
+		}
+    </style>
+</head>
+<body style="background:#f4f4f4; padding:0; margin:0;">
+    <div id="blanker"></div>
+    <div class="container">
+		<?php if(!$this->crmProductData['currentPage']): ?>
+			<p>Process Started</p>
+		<?php else: ?>
+			<p>Imported so far: <?= $this->crmProductData['totalImports'] ?></p>
+			<p>Pages total: <?= $this->crmProductData['totalPages'] ?></p>
+			<p>Pages processed: <?= $this->crmProductData['currentPage'] ?></p>
+			<p>Pages remaining: <?= ($this->crmProductData['totalPages'] - $this->crmProductData['currentPage']) ?></p>
+		<?php endif; ?>
+		<p id="completed">Process Completed!</p>
+		<?php if($this->crmProductData['currentPage'] >= $this->crmProductData['totalPages']): ?>
+			<div style="margin-top: 10px;">
+				<form method="post" action="<?= $this->redirectUrl ?>" onsubmit="return confirm('Are you absolutely sure?');">
+					<div>
+						<input type="hidden" name="REQUEST_TOKEN" value="<?= REQUEST_TOKEN ?>" />
+						<input type="submit" name="purge" value="Purge" style="padding: 10px 30px; background: #C21119; color: #fff; font-size: 115%;"/>
+						<input type="submit" name="import" value="Start Import" style="padding: 10px 30px; background: #C21119; color: #fff; font-size: 115%;"/>
+					</div>
+					<div style="margin-top:5px;">Please click the "Purge" button to initiate a full re-sync.<br/>You will need to login before you can continue!</div>
+				</form>
+			</div>
+		<?php endif; ?>
+    </div>
+    <?php if($this->crmProductData['currentPage'] < $this->crmProductData['totalPages']): ?>    
+		<script>		
+			window.location = '<?= $this->redirectUrl ?>';
+		</script>
+	<?php else: ?>
+		<script>
+			document.getElementById('completed').style.display = 'block';
+			document.getElementById('blanker').style.display = 'none';
+		</script>
+    <?php endif; ?>
+</body>
+</html>
